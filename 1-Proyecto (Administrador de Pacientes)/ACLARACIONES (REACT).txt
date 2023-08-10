@@ -1,0 +1,92 @@
+Pasos:
+1-Yo creé una carpeta donde alojar el proyecto que crearemos luego con comandos de CMD. Lo llamé RPICURSOS_React\1-Proyecto (Administrador de Pacientes), donde centro estará el práctico "citas".
+
+2-Abrimos CMD, cuando inicie estará desde disco C por ello es que para crear el archivo citas hay que ir hasta la carpeta  RPICURSOS_React\1-Proyecto (Administrador de Pacientes) y crear cita, pero para ello debemos de especificarle la ruta y cambiar de disco al E en mi caso; asi (/d cambia de disco): 
+
+cd /d E:\Facultad\Programas\XAMPP\htdocs\Estudios\Cursos Propios\RPICURSOS_React\1-Proyecto (Administrador de Pacientes)
+cd /d E:\Facultad\Programas\XAMPP\htdocs\Estudios\Cursos Propios\RPICURSOS_React\RPICURSOS-React-LaGuiaCompleta\1-Proyecto (Administrador de Pacientes) //RUTA CON GIT INCLUIDO
+
+*Importante: Podriamos haber cambiado solo de disco y buscado mediante cd el nombre de la carpeta tambien como otra forma de hacerlo.
+
+3-Una vez en la ruta indicada ejecutamos comando: npx create-react-app citas
+
+4-Una vez creado pidio instalar un complemento para create-react-app (y puse yes) y todo bien.
+
+5-Una vez creado ejecutamos el sgte comando para iniciar: cd citas/ && npm start
+
+6-Nos aparecera en consola todo esto, será el indicador que esta todo correcto, y eso es todo:
+
+_____________________________________________________________
+
+E:\Facultad\Programas\XAMPP\htdocs\Estudios\Cursos Propios\RPICURSOS_React\1-Proyecto (Administrador de Pacientes)>cd citas/ && npm start
+
+> citas@0.1.0 start
+> react-scripts start
+√ Something is already running on port 3000.
+
+Would you like to run the app on another port instead? ... yes
+(node:7372) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:7372) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+One of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it may break at any time.
+
+babel-preset-react-app is part of the create-react-app project, which
+is not maintianed anymore. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.
+Compiled successfully!
+
+You can now view citas in the browser.
+
+  Local:            http://localhost:3001
+  On Your Network:  http://192.168.0.17:3001
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+
+linkedin.com/in/mauricior-banega
+----------------------------------------------------------------
+
+7-Por último; de bien que estaba realizando el practico empezo a dar el error en Chrome: crbug-1173575-non-js-module-files-deprecated. Porque ocurrio lo desconozco, cerre el CMD puede ser por eso o no, deszconozco. Lo que realice para solucionarlo es nuevamente ejecutar cd citas/ && npm start para que inicie la aplicacion nuevamente y funcionó. 
+Aparentemente habia cambiado de puerto a 3000 y habia dejado de estar en el 3001 por eso daba el error. por ello me pregunto si queria seleccionar otro puerto, puse que si y retomo automaticamente con el 3001 nuevamente.
+
+-----------------------------------------------------------------
+8-Veremos que REACT tiene la posibilidad de mostrar sus componentes en Chrome, alli veremos los hooks y props. Para hacerlo hay que ir a Inspeccionar el localhost que ejecuta el proyecto React (Ej:localhost:3001) para que muestre los React Developers Tools (Component & Profiler)
+-Pero sucede que el proyecto tiene que tener la carpeta build creada para que Chrome muestre; entonces tenemos que ejecutar:npm run build ,en un Terminal Integrado de nuestro proyecto, en este caso "citas" y ejecutar ese comando. Creará entonces la carpeta y  asi se verá estos componentes.
+
+-----------------------------------------------------------------
+
+9-Deployment: Cuando hayamos terminado nuestro proyecto listo para llevar a deployment ejecutamos via CMD o terminal npm run build, para que lea todos los cambios realizados. Una vez hecho para subir a Netlify subimos la carpeta /build unicamente.
+
+10-Observacion: Cuando subimos a Netlify el build este anda bien, osea muestra la pagina. Ahora cuando intento subir el build o los componentes sueltos en la carpeta que aloja la web de react sucede que no lo ejecuta. Solucion: En el archivo "package.json" debemos indicar crear un "homepage" con la URL que tendra esa pagina al final para que si la ejecute, Ejemplifico como queda desde el json:
+
+
+  "name": "citas",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "uuid": "^9.0.0",
+    "web-vitals": "^2.1.4"
+  },
+    "homepage": "https://https://jump-marketing.com/portfolio-mb/proyectos/veterinaria-adminpacientes/", //ACA ESTA EL EJEMPLO
+-----------------------------------------------------------------
+11-Por ultimo: Tener en cuenta que al subir una carpeta porque no habia clonado el repositorio "Cursos Propios" lo tuve que hacer, la referencia indicada en el CDM hay que agregarle esta carpeta, en caso que quedamos trabajar nuevamente con este pryecto en React.
+
+URL:cd /d E:\Facultad\Programas\XAMPP\htdocs\Estudios\Cursos Propios\RPICURSOS_React\RPICURSOS-React-LaGuiaCompleta\1-Proyecto (Administrador de Pacientes)
+
+-Tener en cuenta que si creamos un "homepage" deberemos de modificarlo o quitarlo para que corra en nuestro localhost, hacer correr nuevamente build y cuando termine volver a ejecutar el CMD para que actualice la URL de una vez, y ahi anda.
