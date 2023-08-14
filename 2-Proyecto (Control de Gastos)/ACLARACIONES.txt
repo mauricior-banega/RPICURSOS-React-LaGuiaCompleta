@@ -1,0 +1,81 @@
+Aclaraciones para 2-Proyecto (Control de Gastos)
+
+-Esta vez en vez de Create React App para crear el proyecto usaremos Vite. Para ello abrimos CMD y especificamos la ruta del proyecto donde crearemos "control-gastos" en el:
+
+1º) cd /d E:\Facultad\Programas\XAMPP\htdocs\Estudios\Cursos Propios\RPICURSOS_React\RPICURSOS-React-LaGuiaCompleta\2-Proyecto (Control de Gastos)
+
+-Una vez en el directorio ejecutamos hasta que instale: npm init vite@latest
+
+(*)-Sino se instalo create-vite@4.4.1 antes pedirá que lo haga, le damos: y (yes), aparecerá lo sgte:
+
+Need to install the following packages:
+  create-vite@4.4.1
+Ok to proceed? (y)
+
+2º) Ponemos como Project name: control-gastos
+3º)Seleccionamos Select a framework: react
+
+4º)En el video muestra react o react-ts pero ami aparecen otras; react solo no.En el video dice que no ejecutarña TypeSript por lo que quedaba disponible es JavasScript y JavaScript +SWC, entonces seleccioné: Select a variant: » JavaScript
+
+5º)Luego ejecutamos: cd control-gastos
+6º)Despues: npm i (o npm install, cualquiera de los 2)
+
+7º)Instalará y por ultimo ejecutamos: npm run dev
+
+-Hecho esto ya nos creará el servidor localhost, apareciendo los sgtes datos:
+
+> control-gastos@0.0.0 dev
+> vite
+
+
+  VITE v4.4.9  ready in 1440 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+                            
+-------------------------------------------------------
+
+-Una vez creado el proyecto en el práctico esta la carpeta Materiales App de Gastos de ella extraemos el zip, copiamos img y index para pegarlos en nuestra carpeta "src" de nuestro proyecto. Alli tendremos las imagenes y el HTML con el que trabajaremos.
+
+-Realizaremos una limpieza del codigo
+-En App.jsx eliminamos:
+
+-El import al css por defecto: import './App.css'
+-Y los logos:
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+
+-Y de linea 7: const [count, setCount] = useState(0)
+
+-Tambien todo el contenido por defecto dentro del return en App.jsx
+
+-Luego eliminamos los archivos "App.css"/"logo.svg" (si estuviera en mi caso no esta pero en video si) y en el "index.html" en title ponemos "Control de Gastos en React".
+
+-------------------------------------------------------
+Instalamos el Framework: Normalize
+-Googleamos Normalize CSS o vamos al sgte link para descargarlo: https://necolas.github.io/normalize.css/
+-Creamos en index.html el link y en href ponemos la ruta de lo que descargamos: 
+
+<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+-------------------------------------------------------
+Descargamos fuentes desde Google Fonts: Seleccionamos Lato 400/700/900 y copiamos el link rel y pegamos en el index.html
+
+-------------------------------------------------------
+-Podremos observar que los cambios aplicados en el index.html impactan en el html que ejecuta documento Javascript JSX (App.jsx). Es otro documento pero que esta conectado a todo el proyecto en si mismo.
+
+-------------------------------------------------------
+
+-Creamos la carpeta "components" y alli añadiremos los documentos JSX que precisemos para crear nuestro proyecto.
+-Para "Header.jsx" y "NuevoPresupuesto" antes de comenzar activa un snnipet que crea la sgte estructura pero no funciona:
+                const Header = () => {
+                  return (
+                      <div className='header'>
+                          <span className='title'>Word Hunt</span>
+                      </div>
+                  )
+              }
+
+              export default Header
+
+-Para que si lo haga hay que bajar una extension en VSCode que se llama ES7+ React/Redux/React-Native snippets. Una vez instalada al ejecutarla funciona pero hay que cerrar y volver a abrir VSCode.
