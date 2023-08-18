@@ -79,3 +79,53 @@ Descargamos fuentes desde Google Fonts: Seleccionamos Lato 400/700/900 y copiamo
               export default Header
 
 -Para que si lo haga hay que bajar una extension en VSCode que se llama ES7+ React/Redux/React-Native snippets. Una vez instalada al ejecutarla funciona pero hay que cerrar y volver a abrir VSCode.
+
+---------------------------------------------------------------------------------
+
+Para seguir usando un proyecto REACT con Vite necesitaremos iniciar desde la carpeta del proyecto: npm run dev
+
+Si es necesario especificar (como se cambio de PC la nueva ruta donde se encuentra el archivo). Es: cd /d E:\Programacion\XAMPP\htdocs\Estudios\Cursos Propios\RPICURSOS_React\RPICURSOS-React-LaGuiaCompleta\2-Proyecto (Control de Gastos)\control-gastos
+
+--------------------------------------------------------------
+
+-Por ultimo para subir el deployment de la pagina terminada, ejecutar npm run build desde CMD o terminal y creará una carpeta "dist" que es la que subiremos a Hostinguer.
+
+-Luego editamos agregamos al archivo "vite.config.js" lo sgte:
+
+-Esta: 
+
+export default defineConfig({
+  plugins: [react()],
+  
+})
+
+-Y hay que agregarle: base: '/URL de Ejemplo/' (sin el https://ejemplo.com)
+
+Es decir, para nuestro proyecto subido a Hostinguer quedaria asi:
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/portfolio-mb/proyectos/control-gastos/'
+})
+
+-Y por ultimo ejecutamos: npm run preview
+Con esto podremos subir el contenido de la carpeta "dist" y se podrá ver correctamente y no todo en blanco.
+
+-Luego para que podamos abrirlo desde el localhost deberemos de repetir el proceso pero sin base y ejecutar el npm run build & preview.
+
+-Con eso terminamos, dejare la info que me da CHATGPT
+
+------------Esta es la explicacion de CHATGPT----------------
+
+Para configurar la base correcta en el archivo vite.config.js en Vite, puedes utilizar la opción base para especificar la URL base de tu sitio web. En tu caso, la URL es "".
+
+Aquí tienes cómo podrías configurar vite.config.js:
+
+Copiar
+// vite.config.js
+export default {
+  base: '/portfolio-mb/proyectos/control-gastos/'
+};
+Asegúrate de colocar este archivo en la raíz de tu proyecto. Esta configuración asegurará que los recursos (como archivos CSS, JS y otros activos) se carguen correctamente desde la URL base proporcionada.
+
+--------------------------------------------------------------

@@ -83,7 +83,7 @@ Aparentemente habia cambiado de puerto a 3000 y habia dejado de estar en el 3001
     "uuid": "^9.0.0",
     "web-vitals": "^2.1.4"
   },
-    "homepage": "https://https://jump-marketing.com/portfolio-mb/proyectos/veterinaria-adminpacientes/", //ACA ESTA EL EJEMPLO
+    "homepage": "https://jump-marketing.com/portfolio-mb/proyectos/veterinaria-adminpacientes/", //ACA ESTA EL EJEMPLO
 -----------------------------------------------------------------
 11-Por ultimo: Tener en cuenta que al subir una carpeta porque no habia clonado el repositorio "Cursos Propios" lo tuve que hacer, la referencia indicada en el CDM hay que agregarle esta carpeta, en caso que quedamos trabajar nuevamente con este pryecto en React.
 
