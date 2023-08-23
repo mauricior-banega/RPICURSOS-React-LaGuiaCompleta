@@ -1,0 +1,9 @@
+-Aplicamos los mismos pasos realizados para el Proyecto n°2 para instalar y ejecutar este.
+
+-Styled Components: Lo nuevo es que instalaremos las sgtes dependencias : npm install @emotion/react @emotion/styled
+
+-Sirve para añadir CSS a JS de manera que no tengamos el css de forma global. La ventaja es que si tenemos que eliminar o modificar algun componente que tenga css sepamos donde esta para eliminar esas lineas que ya no se van a precisar en css. Si se tiene un gran archivo de 18.000 lineas del que depende un proyecto, eliminar algo de ese archivo (porque ya no se use) resulta dificil que alguien se anime a hacerlo. Para solucionar esto esta "styled components".
+
+ADICIONAL: -Instalar la extencion en VSC "visual-styled-components" ya que sino lo hacemos el css se vera como comentado y no en color ni el autocompletado de cada instruccion como sucede en css.
+
+---------------------------------------------------------------
